@@ -4,13 +4,16 @@ const galleryEl = document.querySelector('.gallery');
 
 function makeGallery(galleryArray) {
     return galleryArray.map(({ preview, original, description }) => {
-        return `<a class="gallery__item" href="${original}">
-  <img 
-  class="gallery__image" 
-  src="${preview}" 
-  alt="${description}"
-  />
-</a>`;
+      return `<li>
+          <a class="gallery__item" href="${original}">
+          <img
+          class="gallery__image"
+          src="${preview}" 
+          alt="${description}"
+          style="display: block"
+          />
+        </a>
+      </li>`;
     }).join('');
 }
 galleryEl.insertAdjacentHTML('beforeend', makeGallery(galleryItems));
